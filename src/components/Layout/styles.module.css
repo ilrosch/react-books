@@ -1,0 +1,11 @@
+.layout {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.container {
+    width: 100%;
+    padding: 0 40px;
+    display: block;
+    margin: 0 auto;
+}
