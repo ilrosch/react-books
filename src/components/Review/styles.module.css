@@ -1,0 +1,29 @@
+.block {
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 20px;
+}
+
+.block__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.block__row h3, .block__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.block__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}

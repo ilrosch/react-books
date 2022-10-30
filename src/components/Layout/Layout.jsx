@@ -7,6 +7,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import {books} from "../../constants/mock";
 import {BooksPage} from "../../pages/BooksPage/BooksPage";
+import {AnnotationBookPage} from "../../pages/AnnotationBookPage/AnnotationBookPage";
 
 
 export const Layout = () => {
@@ -14,6 +15,7 @@ export const Layout = () => {
         <Header/>
         <div className={classnames(styles.container)}>
             <BooksPage books = {books} />
+            {/*<AnnotationBookPage books = {books}/>*/}
         </div>
     </div>
 }

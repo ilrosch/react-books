@@ -1,0 +1,12 @@
+.block {
+    display: flex;
+    justify-content: space-between;
+    margin: 51px 0 40px 0;
+    height: auto;
+}
+
+@media (max-width: 711px) {
+    .block {
+        flex-direction: column;
+    }
+}
