@@ -1,11 +1,10 @@
-import {Layout} from "./components/Layout/Layout";
-import {BooksPage} from "./pages/BooksPage/BooksPage";
-import {books} from "./constants/mock"
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { Layout } from "./components/Layout/Layout";
+import React from "react";
 
 export function App() {
-    return <>
-        <Layout/>
+  return (
+    <>
+      <Layout />
     </>
+  );
 }

@@ -1,21 +1,19 @@
-import {Header} from "../Header/Header";
-import {Genre} from "../Genre/Genre";
+import { Header } from "../Header/Header";
 import classnames from "classnames";
-import styles from "./styles.module.css"
-import {Catalog} from "../Сatalog/Catalog";
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom/client';
-import {books} from "../../constants/mock";
-import {BooksPage} from "../../pages/BooksPage/BooksPage";
-import {AnnotationBookPage} from "../../pages/AnnotationBookPage/AnnotationBookPage";
-
+import styles from "./styles.module.css";
+import React from "react";
+import { books } from "../../constants/mock";
+import { AnnotationBookPage } from "../../pages/AnnotationBookPage/AnnotationBookPage";
+import { BooksPage } from "../../pages/BooksPage/BooksPage";
 
 export const Layout = () => {
-    return <div className={classnames(styles.layout)}>
-        <Header/>
-        <div className={classnames(styles.container)}>
-            <BooksPage books = {books} />
-            {/*<AnnotationBookPage books = {books}/>*/}
-        </div>
+  return (
+    <div className={classnames(styles.layout)}>
+      <Header />
+      <div className={classnames(styles.container)}>
+        <BooksPage books={books} />
+        {/*<AnnotationBookPage books={books} />*/}
+      </div>
     </div>
-}
+  );
+};

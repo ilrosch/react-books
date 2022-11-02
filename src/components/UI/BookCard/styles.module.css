@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__title, .card__price {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+}
+.card__title {
+    margin-bottom: 22px;
+}
+.card__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+}
+.card__price {
+    font-size: 24px;
+    line-height: 33px;
+    margin-top: 23px;
+}
+
+.star {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}

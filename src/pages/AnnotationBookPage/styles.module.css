@@ -10,3 +10,18 @@
         flex-direction: column;
     }
 }
+
+.card {
+    display: flex;
+    padding: 16px 20px 20px 20px;
+    width: calc(50% - 10px);
+    min-height: 216px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.card__block {
+    display: flex;
+    align-items: flex-end;
+}
