@@ -5,19 +5,19 @@ import styles from "./styles.module.css";
 import { Counter } from "../../components/UI/Counter/Сounter";
 import { BookCard } from "../../components/UI/BookCard/BookCard";
 
-export const AnnotationBookPage = ({ books }) => {
+export const AnnotationBookPage = ({ bookId }) => {
   return (
     <>
       <div className={classnames(styles.block)}>
         <div className={classnames(styles.card)}>
-          <BookCard book={books[0].book[0]} />
+          <BookCard book={bookId} />
           <div className={classnames(styles.card__block)}>
             <Counter />
           </div>
         </div>
-        <Annotation book={books[0]} />
+        <Annotation book={bookId} />
       </div>
-      <Reviews book={books[0].book[0].reviews} />
+      <Reviews book={bookId.reviews} />
     </>
   );
 };

@@ -1,12 +1,15 @@
 import React from "react";
 import classnames from "classnames";
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header className={classnames(styles.header)}>
       <div className={classnames(styles.container)}>
         <div className={classnames(styles.header__block)}>
-          <h2 className={classnames(styles.header__logo)}>Магазин</h2>
+          <Link to="/">
+            <h2 className={classnames(styles.header__logo)}>Магазин</h2>
+          </Link>
 
           <svg
             width="24"
