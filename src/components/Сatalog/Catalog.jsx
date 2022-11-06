@@ -2,29 +2,43 @@ import React, { useEffect } from "react";
 import { Book } from "../Book/Book";
 import { useDispatch, useSelector } from "react-redux";
 import { loadBookNotExist } from "../../store/book/loadBookNotExist";
-import { selectBook, selectIsBookLoading } from "../../store/book/selectors";
+import {
+  selectBooksByGenreId,
+  selectIsBookLoading,
+} from "../../store/book/selectors";
 import { selectGenreBookIds } from "../../store/genre/selectors";
+import { selectCart, selectCartBooks } from "../../store/cart/selectors";
+import loading from "./loading.gif";
+import classnames from "classnames";
+import styles from "../Book/styles.module.css";
 
-export const Catalog = ({ genreId }) => {
+export const Catalog = ({ genreId, displayCart }) => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadBookNotExist(genreId));
-  }, [genreId]);
+  const selector = displayCart
+    ? selectCartBooks
+    : selectBooksByGenreId(genreId);
+  const books = useSelector(selector);
 
-  const bookIds = useSelector((state) => selectGenreBookIds(state, genreId));
+  useEffect(() => {
+    if (!displayCart && genreId) dispatch(loadBookNotExist(genreId));
+  }, [genreId, displayCart, dispatch]);
+
   const isLoading = useSelector((state) => selectIsBookLoading(state));
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return (
+      <img src={loading} alt={loading} className={classnames(styles.loading)} />
+    );
   }
 
-  if (!bookIds) {
+  if (!books) {
     return null;
   }
+
   return (
     <>
-      {bookIds.map((id) => (
-        <Book key={id} bookIds={id} />
+      {books.map((book) => (
+        <Book key={book.id} book={book} link={true} />
       ))}
     </>
   );

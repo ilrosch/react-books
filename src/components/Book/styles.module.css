@@ -12,3 +12,7 @@
 .card:last-child {
     margin: 0 0 0 20px;
 }
+
+.loading {
+    margin-left: 20px;
+}

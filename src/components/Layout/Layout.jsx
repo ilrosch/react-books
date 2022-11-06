@@ -8,17 +8,11 @@ import { BooksPage } from "../../pages/BooksPage/BooksPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
 
-export const Layout = () => {
+export function Layout({ children }) {
   return (
-    <div className={classnames(styles.layout)}>
+    <>
       <Header />
-      <div className={classnames(styles.container)}>
-        <Routes>
-          <Route index element={<BooksPage />} />
-          {/*<Route path="/book" element={<AnnotationBookPage />} />*/}
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-    </div>
+      <div className={classnames(styles.container)}>{children}</div>
+    </>
   );
-};
+}

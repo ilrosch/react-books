@@ -1,0 +1,21 @@
+.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.position__title, .position__price {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+
+.position__price {
+    flex-shrink: 0;
+    margin-left: 6px;
+    font-weight: 700;
+}

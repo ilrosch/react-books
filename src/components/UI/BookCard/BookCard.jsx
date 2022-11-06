@@ -2,15 +2,20 @@ import classnames from "classnames";
 import styles from "./styles.module.css";
 import React from "react";
 import { Rating } from "./Rating";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectBookById } from "../../../store/book/selectors";
 
-export const BookCard = ({ book }) => {
+export const BookCard = ({ book, link }) => {
   return (
     <div className={classnames(styles.card)}>
-      <NavLink className={book}>
-        <h3 className={classnames(styles.card__title)}>{book.name}</h3>
-      </NavLink>
-
+      {link ? (
+        <Link to={"/book/" + encodeURIComponent(book.id)}>
+          <h2 className={styles.card__title}>{book.name}</h2>
+        </Link>
+      ) : (
+        <h2 className={styles.card__title}>{book.name}</h2>
+      )}
       <h4 className={classnames(styles.card__subtitle)}>{book.author}</h4>
       <h4 className={classnames(styles.card__subtitle)}>{book.genre}</h4>
       <div>{Rating(book.rating)}</div>

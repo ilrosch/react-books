@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
 import classnames from "classnames";
+import { useSelector } from "react-redux";
+import { selectBookById } from "../../store/book/selectors";
 export const Annotation = ({ book }) => {
   return (
     <div className={classnames(styles.block)}>

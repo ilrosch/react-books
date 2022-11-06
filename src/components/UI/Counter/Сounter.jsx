@@ -3,12 +3,12 @@ import styles from "./styles.module.css";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSlice } from "../../../store/cart";
-import { selectFilmCount } from "../../../store/cart/selectors";
+import { selectBookCount } from "../../../store/cart/selectors";
 
 export const Counter = ({ bookId }) => {
   console.log(bookId);
   const dispatch = useDispatch();
-  const count = useSelector((state) => selectFilmCount(state, bookId));
+  const count = useSelector((state) => selectBookCount(state, bookId));
   return (
     <div className={classnames(styles.counter)}>
       <button
