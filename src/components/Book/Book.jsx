@@ -3,10 +3,8 @@ import classnames from "classnames";
 import styles from "./styles.module.css";
 import { Counter } from "../UI/Counter/Сounter";
 import { BookCard } from "../UI/BookCard/BookCard";
-import { useSelector } from "react-redux";
-import { selectBookById } from "../../store/book/selectors";
 export const Book = ({ book }) => {
-  console.log(book);
+  // console.log(book);
   if (!book) {
     return null;
   }

@@ -14,15 +14,13 @@ import { loadBookNotExist } from "../../store/book/loadBookNotExist";
 export const AnnotationBookPage = () => {
   const dispatch = useDispatch();
   const { bookId } = useParams();
-  // console.log(this.state);
   const book = useSelector(selectBookById(bookId));
-  // console.log(book);
-  // console.log(useSelector(selectBookModule));
 
   useEffect(() => {
     dispatch(loadBookNotExist(bookId));
   }, [bookId, dispatch]);
 
+  console.log(useSelector(selectBookModule));
   console.log(book);
   return (
     <>

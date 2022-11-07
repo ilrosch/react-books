@@ -7,7 +7,6 @@ import { selectGenre } from "../../store/genre/selectors";
 import { loadGenreNotExist } from "../../store/genre/loadGenreNotExist";
 import { Genre } from "../../components/Genre/Genre";
 import { useParams } from "react-router-dom";
-import { selectBookModule } from "../../store/book/selectors";
 
 export const BooksPage = () => {
   const { genreId } = useParams();

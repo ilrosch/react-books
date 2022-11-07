@@ -1,17 +1,13 @@
 import { bookSlice } from "./index";
 import { prepareData } from "../utils";
-import { selectGenre } from "./selectors";
+import { selectBook } from "./selectors";
 
-export const loadBookNotExist = (genreId) => (dispatch, getState) => {
-  // if (selectGenre(getState())?.length > 0) {
-  //   return;
-  // }
-
+export const loadBookNotExist = (bookId) => (dispatch) => {
   dispatch(bookSlice.actions.startLoading());
-  fetch(`http://localhost:3001/api/book?${genreId}`)
+  fetch(`http://localhost:3001/api/book/?${bookId}`)
     .then((response) => response.json())
-    .then((genre) => {
-      dispatch(bookSlice.actions.successLoading(prepareData(genre)));
+    .then((book) => {
+      dispatch(bookSlice.actions.successLoading(prepareData(book)));
     })
     .catch(() => {
       dispatch(bookSlice.actions.failLoading());
