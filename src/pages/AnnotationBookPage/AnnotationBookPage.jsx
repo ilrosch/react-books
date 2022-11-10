@@ -7,7 +7,7 @@ import { BookCard } from "../../components/UI/BookCard/BookCard";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectBookById, selectBookModule } from "../../store/book/selectors";
+import { selectBookById } from "../../store/book/selectors";
 import { useEffect } from "react";
 import { loadBookNotExist } from "../../store/book/loadBookNotExist";
 
@@ -18,22 +18,25 @@ export const AnnotationBookPage = () => {
 
   useEffect(() => {
     dispatch(loadBookNotExist(bookId));
-  }, [bookId, dispatch]);
+  }, [bookId]);
 
-  console.log(useSelector(selectBookModule));
-  console.log(book);
   return (
     <>
-      <div className={classnames(styles.block)}>
-        <div className={classnames(styles.card)}>
-          <BookCard book={book} />
-          <div className={classnames(styles.card__block)}>
-            <Counter bookId={bookId} />
+      {book !== undefined && (
+        <div>
+          <div className={classnames(styles.block)}>
+            <div className={classnames(styles.card)}>
+              <BookCard book={book} />
+              <div className={classnames(styles.card__block)}>
+                <Counter bookId={bookId} />
+              </div>
+            </div>
+            <Annotation book={book} />
           </div>
+          <Reviews book={book.reviews} />
         </div>
-        <Annotation book={book} />
-      </div>
-      <Reviews book={book.reviews} />
+      )}
+      <h2>Ждем загрузки..</h2>
     </>
   );
 };

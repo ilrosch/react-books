@@ -3,7 +3,7 @@ import { selectCart, selectCartTotal } from "../../store/cart/selectors";
 import classnames from "classnames";
 import styles from "./styles.module.css";
 import { CartList } from "../CartList/CartList";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const Cart = () => {
   const cart = useSelector(selectCart);
   const total = useSelector(selectCartTotal);

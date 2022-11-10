@@ -11,7 +11,7 @@ router.get("/book", (req, res, next) => {
   let result = book;
 
   if (genreId) {
-    const genre = getById(genre)(genreId);
+    const genre = getById(result)(genreId);
     if (genre) {
       result = genre.book.map(getById(result));
     }

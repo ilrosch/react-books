@@ -1,5 +1,5 @@
 import { Statuses } from "../../constants/statuses";
-
+export const selectStateTest = (state) => state;
 export const selectBookModule = (state) => state.book;
 
 export const selectBook = (state) =>

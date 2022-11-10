@@ -7,7 +7,8 @@ import { BooksPage } from "./pages/BooksPage/BooksPage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { AnnotationBookPage } from "./pages/AnnotationBookPage/AnnotationBookPage";
 import { CartPage } from "./pages/CartPage/CartPage";
-export function App() {
+
+export const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -23,4 +24,4 @@ export function App() {
       </BrowserRouter>
     </Provider>
   );
-}
+};
